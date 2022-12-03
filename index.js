@@ -19,9 +19,8 @@ form.addEventListener('submit', (e) => {
 })
 
 document.addEventListener('click', (e) => {
-    if(e.target.dataset.hexValue){
-        console.log(e.target)
-        //navigator.clipboard.writeText(e.target.dataset.hexValue)
+    if(e.target.dataset.hex){
+        navigator.clipboard.writeText(e.target.textContent)
     }
 })
 
@@ -31,7 +30,7 @@ function renderColors(){
         let hexValue = color.hex.value
         colorsHtml += `
             <div class="color" style="background-color: ${hexValue}">
-                <button class="hex-value-btn btn" data-hexValue="${hexValue}">${hexValue}</button>
+                <button class="hex-value-btn btn" data-hex="${hexValue}">${hexValue}</button>
             </div>
         `
     }
